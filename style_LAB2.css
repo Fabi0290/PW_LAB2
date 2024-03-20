@@ -1,0 +1,101 @@
+.imagem {
+    float: left;
+    border-radius: 10px;
+    display: block; 
+}
+body{
+    background-color:aliceblue;
+}
+
+.caixa {
+   
+    float: right; 
+    text-align: right;
+}
+
+.texto{
+    margin-top: 120px;
+}
+
+.center{
+    text-align: center;
+    float: center;
+}
+
+button{
+    padding: 10px 15px;
+    font-size: 12px;
+    background-color: #007bff; 
+    color: #fff; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+table{
+    float: left;
+    width: 95%; 
+    margin: 0 auto; 
+    border-collapse: collapse; 
+    width: 90%;
+    border-color:black;
+}
+
+th, td {
+    border: 1px solid black; 
+    padding: 20px; 
+    text-align: center; 
+    padding: 15px;
+
+}
+
+tr:first-child th {
+    padding: 8px; /* Define o padding menor para as células de cabeçalho na primeira linha */
+}
+
+input[type="checkbox"] {
+    width: 20px; 
+    height: 20px; 
+    border: 1px solid #999; 
+    border-radius: 3px;
+}
+
+input[type="text"] {
+    height: 100px; /* Defina a altura desejada */
+    width: 300px;
+}
+
+
+/* Estilos para o modal */
+.modal {
+    display: none; /* Oculta o modal por padrão */
+    position: fixed; /* Permanece fixo na tela, mesmo quando rolar */
+    z-index: 1; /* Define a ordem de empilhamento do modal */
+    left: 0;
+    top: 0;
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+    background-color: rgba(0,0,0,0.4); /* Fundo semi-transparente */
+    overflow: auto; /* Permite rolar o conteúdo do modal, se necessário */
+}
+
+/* Conteúdo do modal */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* Centraliza verticalmente */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%; /* Largura do conteúdo do modal */
+    border-radius: 10px;
+}
+
+/* Botão para fechar o modal */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAB2</title>
+    <link rel="stylesheet" href="style_LAB2.css">
+</head>
+<body>
+    <nav> 
+        <img class="imagem" src="https://scontent.flis7-1.fna.fbcdn.net/v/t39.30808-6/431170861_954188832733483_3464476329899417998_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeHplLa2Ez1L0x_QhtJX2qGOYD2csxAsu2xgPZyzECy7bC7DVB9kiAOyj1NYrOtFiE2JH-h-vdZ6YpgLVbZV7dg_&_nc_ohc=mnGNr2DmRGsAX9hWOaF&_nc_ht=scontent.flis7-1.fna&oh=00_AfCRLNSuWdj3FaG_XpEx4M9NPsMT8Vbe51qQT-jUeQX1Jw&oe=65F839A7" alt="IMG" width="120" height="120">
+        <div class="caixa">
+            <button onclick="gerir()">Gerir Perfil</button> <button>Terminar Sessão</button>
+        </div>
+    </nav>
+    <h1> Olá Fábio</h1> 
+    <div>
+        <h1 class="texto">As Minhas Tarefas</h1>
+        <button class="caixa" onclick="abrirModal()"> Nova Tarefa</button>
+        
+        <table border="3">
+            <tr> 
+                <th>Tarefa</th>
+                <th> Data</th>
+                <th> Estado</th>
+            </tr> 
+            <tr>
+                
+                <td id="Texto1" onclick="abrirEditar()">Fazer o Lab1 de PW</td>
+                </td>
+                <td>
+                    14-03-2024
+                </td> 
+                <td>
+                    <input type="checkbox">
+                </td>       
+            </tr> 
+            <tr>
+                <td onclick="abrirEditar2()">fazer o Lab2 de PW </td>
+                <td> 27-03-2024</td>
+                <td> <input type="checkbox"></td>
+            </tr>
+
+
+        </table>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal()">&times;</span>
+            
+            <div class="center">
+                <p><h1>Nova Tarefa</h1></p>
+                <h2>Descrição</h2>
+                <p></p>
+                <input type="text">
+                <p></p>
+                <input type="date" >
+                <p></p>
+                <button onclick="fecharModal()">Gravar</button>
+            </div>
+            
+        </div>
+    </div>
+
+    <div id="myEdit" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharEditar()">&times;</span>
+            
+            <div class="center">
+                <h1>Editar Tarefa</h1>
+                <h2> Descrição</h2>
+                <p></p>
+                <!--------------------------------------------------->
+                <input type="text" id="campoTexto" oninput="atualizarTexto1()">
+                <p></p>
+                <input type="date">
+                <p></p>
+                <button onclick="fecharEditar()"> Guardar</button>
+                <button onclick="fecharEditar()"> Apagar</button>
+            </div>
+           
+        </div>
+
+    </div>
+
+    <div id="myEdit2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharEditar2()">&times;</span>
+            
+            <div class="center">
+                <h1>Editar Tarefa</h1>
+                <h2> Descrição</h2>
+                <p></p>
+                <input type="text" id="campoTexto2">
+                <p></p>
+                <input type="date">
+                <p></p>
+                <button onclick="fecharEditar2()"> Guardar</button>
+                <button onclick="fecharEditar2()"> Apagar</button>
+            </div>
+           
+        </div>
+
+    </div>
+    
+    
+   <script>
+    function gerir(){
+        window.location.href="Gerir.html"
+    }
+    
+    function abrirModal() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "block";
+    }
+
+    function fecharModal() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+    }
+
+    //////////////////////////////
+    function abrirEditar(elemento) {
+        var modal = document.getElementById("myEdit");
+        modal.style.display = "block";
+        document.getElementById("campoTexto").value = elemento.innerText;
+    }
+
+    function fecharEditar(){
+        var modal = document.getElementById("myEdit");
+        modal.style.display="none";
+    }
+
+
+    function abrirEditar2(){
+        var modal = document.getElementById("myEdit2");
+        modal.style.display="block";
+    }
+
+    function fecharEditar2(){
+        var modal = document.getElementById("myEdit2");
+        modal.style.display="none";
+    }
+   //////////////////////////////////////
+    function atualizarTexto1() {
+    document.getElementById("Texto1").innerText = document.getElementById("campoTexto").value;
+    }
+
+    var frase = "Fazer o Lab1 de PW";
+    document.getElementById("campoTexto").value = frase;
+
+    var frase = "Fazer o Lab2 de PW";
+    document.getElementById("campoTexto2").value = frase;
+   </script> 
+   
+</body>
+
+</html>
